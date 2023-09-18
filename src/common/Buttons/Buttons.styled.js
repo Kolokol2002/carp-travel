@@ -20,4 +20,9 @@ export const StyledButtonHero = styled.div`
     display: flex;
     justify-content: end;
   }
+  @media (min-width: 1280px) {
+    & button {
+      width: 294px;
+    }
+  }
 `;

@@ -23,16 +23,13 @@ export const LogoText = styled("span")`
   font-weight: 400;
   line-height: 14px;
   letter-spacing: 0.185em;
-  color: rgba(255, 255, 255, 1);
 `;
 
 export const NavButtonMobile = styled("button")`
-  font-family: Inter;
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 1);
   text-transform: uppercase;
 
   @media (min-width: 768px) {

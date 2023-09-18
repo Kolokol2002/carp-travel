@@ -1,5 +1,4 @@
 import React from "react";
-// import logo from "../../../public/images/logo.png";
 // import BurgerMenu from "./BurgerMenu";
 import {
   HeaderComponent,
@@ -14,7 +13,7 @@ const Header = () => {
     <HeaderComponent>
       {/* <BurgerMenu /> */}
       <Logo>
-        {/* <LogoImage src={#} className="App-logo" alt="logo" /> */}
+        <LogoImage src={"/images/logo.png"} className="App-logo" alt="logo" />
         <LogoText>CarpTravel</LogoText>
       </Logo>
       <NavButtonMobile>Menu</NavButtonMobile>
