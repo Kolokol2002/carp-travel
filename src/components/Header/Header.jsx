@@ -13,7 +13,11 @@ const Header = () => {
     <HeaderComponent>
       {/* <BurgerMenu /> */}
       <Logo>
-        <LogoImage src={"/images/logo.png"} className="App-logo" alt="logo" />
+        <LogoImage
+          src={"/carp-travel/images/logo.png"}
+          className="App-logo"
+          alt="logo"
+        />
         <LogoText>CarpTravel</LogoText>
       </Logo>
       <NavButtonMobile>Menu</NavButtonMobile>
