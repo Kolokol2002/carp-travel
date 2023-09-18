@@ -1,10 +1,15 @@
 import React from "react";
 import { StyledButtonHero } from "./Buttons.styled";
 
-const ButtonHero = () => {
+const ButtonHero = ({ refEl }) => {
+  const handleClick = () => {
+    console.log(refEl);
+    refEl.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <StyledButtonHero>
-      <button>JOIN NOW</button>
+      <button onClick={handleClick}>JOIN NOW</button>
     </StyledButtonHero>
   );
 };

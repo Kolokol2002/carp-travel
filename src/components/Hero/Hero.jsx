@@ -8,7 +8,7 @@ import {
 import ButtonHero from "../../common/Buttons/Buttons";
 import MainTitle from "../../common/MainTitle/MainTitle";
 
-const Hero = () => {
+const Hero = ({ refEl }) => {
   return (
     <HeroComponent>
       <SecondaryText>
@@ -35,7 +35,7 @@ const Hero = () => {
           service!
         </h3>
       </UsText>
-      <ButtonHero />
+      <ButtonHero refEl={refEl} />
     </HeroComponent>
   );
 };

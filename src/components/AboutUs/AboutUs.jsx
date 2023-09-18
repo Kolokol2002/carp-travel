@@ -1,7 +1,7 @@
 import MainTitle from "../../common/MainTitle/MainTitle";
 import { AboutUsComponent, SecondaryText, SubTitle } from "./AboutUs.styled";
 
-function AboutUs() {
+function AboutUs({ name }) {
   return (
     <AboutUsComponent>
       <div>

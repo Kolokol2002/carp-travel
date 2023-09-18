@@ -109,7 +109,7 @@ export const NameList = styled.ul`
     &::before {
       content: "";
       display: inline-block;
-      background-image: url("/images/slides/dot_icon.svg");
+      background-image: url("/carp-travel/images/slides/dot_icon.svg");
       width: 9px;
       height: 9px;
       margin-right: 8px;
@@ -130,6 +130,7 @@ export const Name = styled.li`
   letter-spacing: 0em;
   text-transform: uppercase;
   opacity: 50%;
+  cursor: pointer;
 
   @media (min-width: 768px) {
     line-height: 18px;

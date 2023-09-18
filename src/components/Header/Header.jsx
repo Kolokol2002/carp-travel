@@ -7,6 +7,7 @@ import {
   LogoText,
   NavButtonMobile,
 } from "./Header.styled";
+import { Link } from "react-scroll";
 
 const Header = () => {
   return (
@@ -20,6 +21,12 @@ const Header = () => {
         />
         <LogoText>CarpTravel</LogoText>
       </Logo>
+      <Link to="about" smooth={true}>
+        About
+      </Link>
+      <Link to="services" smooth={true}>
+        Services
+      </Link>
       <NavButtonMobile>Menu</NavButtonMobile>
     </HeaderComponent>
   );
