@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BackgroundMain = styled.div`
-  background-image: url(/images/${(prop) => prop.src});
+  background-image: url(/carp-travel/images/${(prop) => prop.src});
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: 20%;
