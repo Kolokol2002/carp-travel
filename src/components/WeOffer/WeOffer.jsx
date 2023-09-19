@@ -55,7 +55,7 @@ const WeOffer = ({ refIn }) => {
         loop={true}
         allowTouchMove={false}
         onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        // onSwiper={(swiper) => console.log(swiper)}
       >
         {/* <div data-swiper-parallax="0"></div> */}
         {data.map(({ underImageText, id, subtitle, img, name }, idx) => (

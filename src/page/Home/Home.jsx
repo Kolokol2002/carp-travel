@@ -6,6 +6,7 @@ import { HomePage } from "./Home.styled";
 import Container from "../../common/Container/Container";
 import Hero from "../../components/Hero/Hero";
 import WeOffer from "../../components/WeOffer/WeOffer";
+import Gallery from "../../components/Gallery/Gallery";
 
 const Home = () => {
   const ref = useRef(null);
@@ -28,6 +29,11 @@ const Home = () => {
       <BackgroundImage src={"background-we-offer.jpg"}>
         <Container name={"services"}>
           <WeOffer refIn={ref} />
+        </Container>
+      </BackgroundImage>
+      <BackgroundImage src={"background-header-our-gallery.jpg"}>
+        <Container name={"gallery"}>
+          <Gallery />
         </Container>
       </BackgroundImage>
     </HomePage>
