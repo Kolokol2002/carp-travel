@@ -1,10 +1,11 @@
 import React from "react";
 import MainTitle from "../../common/MainTitle/MainTitle";
 
+import "./WeOffer.css";
+
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Parallax, A11y, EffectFade } from "swiper/modules";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
@@ -29,8 +30,19 @@ const Test = ({ data, id }) => {
       {data.map(({ name, id }) => (
         <Name
           onClick={() => {
+            const translatePred = swiper.translate;
             swiper.slideToLoop(id - 1);
-            // swiper.changeDirection();
+            const translate = swiper.translate;
+            swiper.translateTo(translatePred);
+            const el = swiper.el.getElementsByClassName(
+              "active-slide-test-offer"
+            )[0];
+            el.classList.remove("active-slide-test-offer");
+
+            setTimeout(() => {
+              swiper.translateTo(translate);
+              el.classList.add("active-slide-test-offer");
+            }, 300);
           }}
         >
           {name}
@@ -47,52 +59,31 @@ const WeOffer = ({ refIn }) => {
         WE <span>OFFER</span>
       </MainTitle>
       <Swiper
-        parallax={true}
         modules={[A11y, EffectFade, Parallax]}
         slidesPerView={1}
         speed={1}
-        // edgeSwipeDetection={"prevent"}
-        loop={true}
         allowTouchMove={false}
-        onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
+        wrapperClass="slide-wraper-offer"
+        slideActiveClass="active-slide-test-offer"
+        slideNextClass="next-slide-test-offer"
+        slidePrevClass="prev-slide-test-offer"
       >
-        {/* <div data-swiper-parallax="0"></div> */}
         {data.map(({ underImageText, id, subtitle, img, name }, idx) => (
-          <SwiperSlide key={id}>
-            <CountSlides
-              data-swiper-parallax-opacity="0"
-              data-swiper-parallax-duration="2000"
-            >
+          <SwiperSlide className="slide-test-offer" key={id}>
+            <CountSlides>
               <span>{`0${idx + 1}/`}</span>
               {`0${data.length}`}
             </CountSlides>
             <div>
               <ImageSlideContainer>
-                <img
-                  src={img}
-                  alt={name}
-                  data-swiper-parallax-opacity="0"
-                  data-swiper-parallax-duration="2000"
-                />
+                <img src={img} alt={name} />
               </ImageSlideContainer>
-              <UnderImageText
-                data-swiper-parallax-opacity="0"
-                data-swiper-parallax-duration="2000"
-              >
+              <UnderImageText className="slider-underImageText">
                 {underImageText}
               </UnderImageText>
-              <Test
-                data-swiper-parallax-opacity="0"
-                data-swiper-parallax-duration="2000"
-                data={data}
-                id={id}
-              />
-              <SubTitle
-                data-swiper-parallax-opacity="0"
-                data-swiper-parallax-duration="2000"
-              >
-                {subtitle}
+              <Test data={data} id={id} />
+              <SubTitle className="slider-subtitle">
+                <p>{subtitle}</p>
               </SubTitle>
             </div>
             <br />
