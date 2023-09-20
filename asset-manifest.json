@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/carp-travel/static/css/main.2e233b95.css",
-    "main.js": "/carp-travel/static/js/main.ce4f093f.js",
+    "main.css": "/carp-travel/static/css/main.c30cb92d.css",
+    "main.js": "/carp-travel/static/js/main.3dee3438.js",
     "index.html": "/carp-travel/index.html",
-    "main.2e233b95.css.map": "/carp-travel/static/css/main.2e233b95.css.map",
-    "main.ce4f093f.js.map": "/carp-travel/static/js/main.ce4f093f.js.map"
+    "main.c30cb92d.css.map": "/carp-travel/static/css/main.c30cb92d.css.map",
+    "main.3dee3438.js.map": "/carp-travel/static/js/main.3dee3438.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e233b95.css",
-    "static/js/main.ce4f093f.js"
+    "static/css/main.c30cb92d.css",
+    "static/js/main.3dee3438.js"
   ]
 }
