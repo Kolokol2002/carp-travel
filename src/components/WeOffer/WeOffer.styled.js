@@ -17,7 +17,7 @@ export const WeOfferComponent = styled.section`
     & .swiper {
       overflow: visible;
     }
-    & > div > div > div > div {
+    /* & > div > div > div > div {
       display: flex;
       flex-direction: column;
       align-content: space-between;
@@ -26,8 +26,8 @@ export const WeOfferComponent = styled.section`
       width: 100%;
       @media (min-width: 1280px) {
         align-content: baseline;
-      }
-    }
+      } */
+    /* } */
   }
 `;
 
@@ -72,7 +72,7 @@ export const ImageSlideContainer = styled.div`
     width: 463px;
     height: 370px;
     margin-bottom: 0;
-    order: 1;
+    /* order: 1; */
     /* align-self: flex-start; */
   }
 
@@ -80,6 +80,7 @@ export const ImageSlideContainer = styled.div`
     width: 607px;
     height: 429px;
     margin-right: 20px;
+    margin: 0;
   }
 `;
 
@@ -96,9 +97,10 @@ export const UnderImageText = styled.p`
     color: rgba(255, 255, 255, 0.6);
     width: fit-content;
     text-align: start;
-    order: 3;
+    /* order: 3; */
   }
   @media (min-width: 1280px) {
+    display: none;
   }
 `;
 
@@ -108,10 +110,10 @@ export const SubTitle = styled.div`
   line-height: 20px;
   letter-spacing: 0em;
   @media (min-width: 768px) {
-    width: 201px;
+    /* width: 201px; */
     color: rgba(255, 255, 255, 0.6);
     font-size: 12px;
-    order: 4;
+    /* order: 4; */
   }
   @media (min-width: 1280px) {
     & p {
@@ -120,8 +122,8 @@ export const SubTitle = styled.div`
     }
     /* display: flex; */
     width: auto;
-    height: 100px;
-    max-width: 292px;
+    /* height: 100px; */
+    /* max-width: 292px; */
     /* flex-grow: 1; */
     /* flex-shrink: 1; */
     /* flex-basis: 292px; */
@@ -137,55 +139,90 @@ export const NameList = styled.ul`
   gap: 16px;
   margin-bottom: 34px;
   max-width: 203px;
+  & p {
+    display: none;
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+    text-align: right;
 
-  & li:nth-child(${(prop) => prop.id}) {
-    font-weight: 500;
-    opacity: 1;
-    display: flex;
-    align-items: center;
-    &::before {
-      content: "";
-      display: inline-block;
-      background-image: url("/carp-travel/images/slides/dot_icon.svg");
-      width: 9px;
-      height: 9px;
-      margin-right: 8px;
-    }
     @media (min-width: 768px) {
-      font-size: 22px;
+      /* display: inline; */
+      color: rgba(255, 255, 255, 0.6);
+      width: fit-content;
+      text-align: start;
+      /* order: 3; */
     }
     @media (min-width: 1280px) {
-      font-size: 28px;
+      margin: 0;
+    }
+  }
+
+  & li:nth-child(${(prop) => prop.id}) {
+    & span {
+      font-weight: 500;
+      opacity: 1;
+      display: flex;
+      align-items: center;
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url("/carp-travel/images/slides/dot_icon.svg");
+        width: 9px;
+        height: 9px;
+        margin-right: 8px;
+      }
+      @media (min-width: 768px) {
+        font-size: 22px;
+      }
+      @media (min-width: 1280px) {
+        font-size: 28px;
+      }
+    }
+    & p {
+      @media (min-width: 1280px) {
+        display: block;
+      }
     }
   }
   @media (min-width: 768px) {
-    order: 2;
+    /* order: 2; */
   }
   @media (min-width: 1280px) {
-    max-width: 253px;
-    margin-bottom: 140px;
-    margin-right: 60px;
+    max-width: max-content;
+    margin: 0;
+    /* margin-bottom: 140px; */
+    /* margin-right: 60px; */
     /* height: 100%; */
   }
 `;
 
 export const Name = styled.li`
-  font-size: 20px;
-  font-weight: 200;
-  line-height: 17px;
-  letter-spacing: 0em;
-  text-transform: uppercase;
-  opacity: 50%;
-  cursor: pointer;
+  & span {
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    opacity: 50%;
+    cursor: pointer;
 
-  @media (min-width: 768px) {
-    line-height: 18px;
-    font-size: 22px;
-    width: fit-content;
+    @media (min-width: 768px) {
+      line-height: 18px;
+      font-size: 22px;
+      width: fit-content;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 28px;
+      line-height: 24px;
+      max-width: 253px;
+    }
   }
-
   @media (min-width: 1280px) {
-    font-size: 28px;
-    line-height: 24px;
+    display: flex;
+    align-items: ;
   }
 `;

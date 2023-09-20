@@ -27,7 +27,7 @@ const Test = ({ data, id }) => {
   const swiper = useSwiper();
   return (
     <NameList id={id}>
-      {data.map(({ name, id }) => (
+      {data.map(({ name, id, underImageText }) => (
         <Name
           onClick={() => {
             const translatePred = swiper.translate;
@@ -45,7 +45,8 @@ const Test = ({ data, id }) => {
             }, 300);
           }}
         >
-          {name}
+          <span>{name}</span>
+          <p>{underImageText}</p>
         </Name>
       ))}
     </NameList>
@@ -74,17 +75,21 @@ const WeOffer = ({ refIn }) => {
               <span>{`0${idx + 1}/`}</span>
               {`0${data.length}`}
             </CountSlides>
-            <div>
-              <ImageSlideContainer>
-                <img src={img} alt={name} />
-              </ImageSlideContainer>
-              <UnderImageText className="slider-underImageText">
-                {underImageText}
-              </UnderImageText>
-              <Test data={data} id={id} />
-              <SubTitle className="slider-subtitle">
-                <p>{subtitle}</p>
-              </SubTitle>
+            <div className="tablet:flex tablet:gap-[24px] desktop:gap-0">
+              <div>
+                <ImageSlideContainer>
+                  <img src={img} alt={name} />
+                </ImageSlideContainer>
+              </div>
+              <div className="tablet:flex tablet:flex-col">
+                <UnderImageText className="slider-underImageText tablet:order-2">
+                  {underImageText}
+                </UnderImageText>
+                <Test className="tablet:" data={data} id={id} />
+                <SubTitle className="slider-subtitle tablet:order-3">
+                  <p>{subtitle}</p>
+                </SubTitle>
+              </div>
             </div>
             <br />
           </SwiperSlide>
