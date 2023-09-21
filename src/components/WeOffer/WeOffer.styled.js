@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const WeOfferComponent = styled.section`
-  & h2 {
+  /* & h2 {
     margin-bottom: 24px;
     @media (min-width: 768px) {
       margin-bottom: 36px;
@@ -9,30 +9,19 @@ export const WeOfferComponent = styled.section`
     @media (min-width: 1280px) {
       margin-bottom: 23px;
     }
-  }
-  @media (min-width: 768px) {
+  } */
+  /* @media (min-width: 768px) {
     position: relative;
     overflow: hidden;
 
     & .swiper {
       overflow: visible;
     }
-    /* & > div > div > div > div {
-      display: flex;
-      flex-direction: column;
-      align-content: space-between;
-      flex-wrap: wrap;
-      max-height: 389px;
-      width: 100%;
-      @media (min-width: 1280px) {
-        align-content: baseline;
-      } */
-    /* } */
-  }
+  } */
 `;
 
 export const CountSlides = styled.span`
-  display: block;
+  /* display: block;
   font-size: 43px;
   font-weight: 100;
   line-height: 52px;
@@ -40,12 +29,12 @@ export const CountSlides = styled.span`
   color: rgba(255, 255, 255, 0.2);
   text-align: right;
 
-  margin-bottom: 16px;
+  margin-bottom: 16px; */
 
-  & span {
+  /* & span {
     color: rgba(255, 255, 255, 1);
-  }
-  @media (min-width: 768px) {
+  } */
+  /* @media (min-width: 768px) {
     font-size: 67px;
     position: absolute;
     top: -100px;
@@ -54,16 +43,12 @@ export const CountSlides = styled.span`
 
   @media (min-width: 1280px) {
     font-size: 98px;
-
-    & span {
-    }
-  }
+  } */
 `;
 
 export const ImageSlideContainer = styled.div`
-  margin-bottom: 12px;
+  /* margin-bottom: 12px;
   @media (min-width: 768px) {
-    /* display: block; */
     & img {
       width: 100%;
       height: 100%;
@@ -72,16 +57,13 @@ export const ImageSlideContainer = styled.div`
     width: 463px;
     height: 370px;
     margin-bottom: 0;
-    /* order: 1; */
-    /* align-self: flex-start; */
   }
 
   @media (min-width: 1280px) {
     width: 607px;
     height: 429px;
     margin-right: 20px;
-    margin: 0;
-  }
+  } */
 `;
 
 export const UnderImageText = styled.p`
@@ -93,43 +75,30 @@ export const UnderImageText = styled.p`
   text-align: right;
 
   @media (min-width: 768px) {
-    /* display: inline; */
     color: rgba(255, 255, 255, 0.6);
     width: fit-content;
     text-align: start;
-    /* order: 3; */
+    margin-bottom: auto;
   }
   @media (min-width: 1280px) {
     display: none;
   }
 `;
 
-export const SubTitle = styled.div`
+export const SubTitle = styled.p`
   font-size: 14px;
   font-weight: 200;
   line-height: 20px;
   letter-spacing: 0em;
   @media (min-width: 768px) {
-    /* width: 201px; */
     color: rgba(255, 255, 255, 0.6);
     font-size: 12px;
-    /* order: 4; */
   }
   @media (min-width: 1280px) {
-    & p {
-      white-space: pre-wrap;
-      height: 100%;
-    }
-    /* display: flex; */
     width: auto;
-    /* height: 100px; */
-    /* max-width: 292px; */
-    /* flex-grow: 1; */
-    /* flex-shrink: 1; */
-    /* flex-basis: 292px; */
-    /* flex-flow: nowrap; */
     font-size: 18px;
     line-height: 24px;
+    margin-left: 316px;
   }
 `;
 
@@ -145,19 +114,9 @@ export const NameList = styled.ul`
     font-weight: 200;
     line-height: 24px;
     letter-spacing: 0.2em;
-    margin-bottom: 24px;
-    text-align: right;
-
-    @media (min-width: 768px) {
-      /* display: inline; */
-      color: rgba(255, 255, 255, 0.6);
-      width: fit-content;
-      text-align: start;
-      /* order: 3; */
-    }
-    @media (min-width: 1280px) {
-      margin: 0;
-    }
+    color: rgba(255, 255, 255, 0.6);
+    align-self: center;
+    margin-left: 60px;
   }
 
   & li:nth-child(${(prop) => prop.id}) {
@@ -188,14 +147,11 @@ export const NameList = styled.ul`
     }
   }
   @media (min-width: 768px) {
-    /* order: 2; */
+    margin-bottom: 25px;
   }
   @media (min-width: 1280px) {
-    max-width: max-content;
+    max-width: 100%;
     margin: 0;
-    /* margin-bottom: 140px; */
-    /* margin-right: 60px; */
-    /* height: 100%; */
   }
 `;
 
@@ -218,11 +174,10 @@ export const Name = styled.li`
     @media (min-width: 1280px) {
       font-size: 28px;
       line-height: 24px;
-      max-width: 253px;
+      width: 253px;
     }
   }
   @media (min-width: 1280px) {
     display: flex;
-    align-items: ;
   }
 `;

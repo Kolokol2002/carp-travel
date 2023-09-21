@@ -21,7 +21,6 @@ import {
   UnderImageText,
   WeOfferComponent,
 } from "./WeOffer.styled";
-// const dataTets = [data[0]];
 
 const Test = ({ data, id }) => {
   const swiper = useSwiper();
@@ -35,7 +34,7 @@ const Test = ({ data, id }) => {
             const translate = swiper.translate;
             swiper.translateTo(translatePred);
             const el = swiper.el.getElementsByClassName(
-              "active-slide-test-offer"
+              "active-slide-test-offer",
             )[0];
             el.classList.remove("active-slide-test-offer");
 
@@ -53,11 +52,15 @@ const Test = ({ data, id }) => {
   );
 };
 
-const WeOffer = ({ refIn }) => {
+const WeOffer = () => {
   return (
-    <WeOfferComponent ref={refIn}>
-      <MainTitle>
-        WE <span>OFFER</span>
+    <WeOfferComponent>
+      <MainTitle
+        className="mb-[24px] 
+      tablet:absolute 
+      desktop:mb-[23px]"
+      >
+        WE <span className="">OFFER</span>
       </MainTitle>
       <Swiper
         modules={[A11y, EffectFade, Parallax]}
@@ -71,27 +74,36 @@ const WeOffer = ({ refIn }) => {
       >
         {data.map(({ underImageText, id, subtitle, img, name }, idx) => (
           <SwiperSlide className="slide-test-offer" key={id}>
-            <CountSlides>
-              <span>{`0${idx + 1}/`}</span>
-              {`0${data.length}`}
-            </CountSlides>
-            <div className="tablet:flex tablet:gap-[24px] desktop:gap-0">
-              <div>
-                <ImageSlideContainer>
-                  <img src={img} alt={name} />
-                </ImageSlideContainer>
-              </div>
-              <div className="tablet:flex tablet:flex-col">
+            <div
+              className="mb-[16px] text-right text-[43px] font-thin leading-[52px]
+            tablet:mb-[52px] tablet:ml-[495px] tablet:text-start tablet:text-[67px]
+            desktop:mb-[37px] desktop:ml-[617px] desktop:text-[98px] desktop:leading-[75px]"
+            >
+              <span className="">{`0${idx + 1}/`}</span>
+              <span className="text-white text-opacity-[0.2]">{`0${data.length}`}</span>
+            </div>
+            <div
+              className="
+            tablet:flex tablet:gap-[39px]
+           desktop:gap-[20px]"
+            >
+              <img
+                className="mb-[12px] 
+              tablet:m-0 tablet:h-[370px] tablet:w-[463px] tablet:object-cover
+               desktop:h-[429px] desktop:w-[607px]"
+                src={img}
+                alt={name}
+              />
+              <div className=" tablet:flex tablet:flex-col desktop:justify-between">
                 <UnderImageText className="slider-underImageText tablet:order-2">
                   {underImageText}
                 </UnderImageText>
                 <Test className="tablet:" data={data} id={id} />
                 <SubTitle className="slider-subtitle tablet:order-3">
-                  <p>{subtitle}</p>
+                  {subtitle}
                 </SubTitle>
               </div>
             </div>
-            <br />
           </SwiperSlide>
         ))}
       </Swiper>
