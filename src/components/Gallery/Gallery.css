@@ -16,6 +16,39 @@
   transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
 }
 
+@media (min-width: 768px) {
+  .slide-test > div {
+    transform: scale(100%);
+    /* width: 415px; */
+    /* height: 294px; */
+  }
+  .slide-test img {
+    /* width: 100%; */
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .active-slide-test div {
+    /* width: 100%; */
+    /* transform: scale(150%); */
+  }
+  .active-slide-test {
+  }
+  .slide-test {
+    /* transform: scale(54%); */
+    height: auto;
+  }
+
+  .next-slide-test,
+  .prev-slide-test {
+    /* width: 121px !important; */
+  }
+}
+
+@media (min-width: 1280px) {
+}
+
 .slide-test > div::before {
   content: "";
   position: absolute;
