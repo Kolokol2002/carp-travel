@@ -9,12 +9,11 @@ import images from "../../data/gallery.json";
 const Gallery = () => {
   return (
     <section>
-      <MainTitle className="mb-[88px] text-center">
+      <MainTitle className="mb-[37px] tablet:mb-[88px] tablet:text-center">
         Our <span>Gallery</span>
       </MainTitle>
       <Swiper
-        // className="h-[1000px]"
-        slidesPerView={1.7}
+        className="swiper-main"
         grabCursor={true}
         centeredSlides={true}
         speed={400}
@@ -24,28 +23,52 @@ const Gallery = () => {
         slidePrevClass="prev-slide-test"
         // parallax={true}
         effect="creative"
-        creativeEffect={{
-          limitProgress: 3, // slides after 2nd before/after active will have same state
-          prev: {
-            // opacity: not_active_slide_opacity_value,
-            scale: 0.292,
-            // will set `translateX(-95%)` on previous slides
-            translate: ["-70%", 0, 0],
-          },
-          next: {
-            // opacity: not_active_slide_opacity_value,
-            scale: 0.292,
-            // will set `translateX(95%)` on next slides
-            translate: ["70%", 0, 0],
-          },
-        }}
         onSwiper={(swiper) => console.dir(swiper)}
         modules={[Parallax, EffectCreative]}
         breakpoints={{
-          480: { direction: "vertical" },
+          320: {
+            direction: "vertical",
+            // centeredSlides: true,
+            autoHeight: true,
+            slidesPerView: 3,
+            creativeEffect: {
+              limitProgress: 3, // slides after 2nd before/after active will have same state
+              prev: {
+                // opacity: not_active_slide_opacity_value,
+                scale: 0.9,
+                // will set `translateX(-95%)` on previous slides
+                translate: [0, "-105%", 0],
+              },
+              next: {
+                // opacity: not_active_slide_opacity_value,
+                scale: 0.9,
+                // will set `translateX(95%)` on next slides
+                translate: [0, "105%", 0],
+              },
+              // spaceBetween: 24,
+            },
+          },
           768: {
             direction: "horizontal",
-            // spaceBetween: 24,
+            // autoHeight: false,
+
+            slidesPerView: 1.7,
+            creativeEffect: {
+              limitProgress: 3, // slides after 2nd before/after active will have same state
+              prev: {
+                // opacity: not_active_slide_opacity_value,
+                scale: 0.292,
+                // will set `translateX(-95%)` on previous slides
+                translate: ["-70%", 0, 0],
+              },
+              next: {
+                // opacity: not_active_slide_opacity_value,
+                scale: 0.292,
+                // will set `translateX(95%)` on next slides
+                translate: ["70%", 0, 0],
+              },
+              // spaceBetween: 24,
+            },
           },
           1280: {},
         }}

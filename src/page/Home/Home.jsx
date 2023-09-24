@@ -7,6 +7,10 @@ import Container from "../../common/Container/Container";
 import Hero from "../../components/Hero/Hero";
 import WeOffer from "../../components/WeOffer/WeOffer";
 import Gallery from "../../components/Gallery/Gallery";
+import {
+  ChooseUsFirst,
+  ChooseUsSecond,
+} from "../../components/ChooseUs/ChooseUs";
 
 const Home = () => {
   const ref = useRef(null);
@@ -34,6 +38,16 @@ const Home = () => {
       <BackgroundImage src={"background-header-our-gallery.jpg"}>
         <Container name={"gallery"}>
           <Gallery />
+        </Container>
+      </BackgroundImage>
+      <BackgroundImage src={"background-choose-us.jpg"}>
+        <Container name={"choose_first"}>
+          <ChooseUsFirst />
+        </Container>
+      </BackgroundImage>
+      <BackgroundImage src={"background-choose-us.jpg"}>
+        <Container name={"choose_second"}>
+          <ChooseUsSecond />
         </Container>
       </BackgroundImage>
     </HomePage>
