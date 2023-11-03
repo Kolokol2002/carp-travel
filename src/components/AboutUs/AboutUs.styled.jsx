@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 export const AboutUsComponent = styled.section`
   & h2 {
@@ -95,11 +95,11 @@ export const SecondaryText = styled.h3`
   margin-bottom: 40px;
   align-items: end;
 
-  & span:nth-child(1) {
+  & span:nth-of-type(1) {
     align-self: flex-start;
   }
 
-  & span:nth-child(3) {
+  & span:nth-of-type(3) {
     color: rgba(255, 255, 255, 0.7);
     font-weight: 200;
     letter-spacing: -0.01em;
@@ -122,7 +122,7 @@ export const SecondaryText = styled.h3`
     font-size: 18px;
     line-height: 24px;
 
-    & span:nth-child(3) {
+    & span:nth-of-type(3) {
       letter-spacing: 0.12em;
     }
   }
