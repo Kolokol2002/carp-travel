@@ -9,7 +9,7 @@ import images from "../../data/gallery.json";
 const Gallery = () => {
   return (
     <section>
-      <MainTitle className="mb-[37px] tablet:mb-[88px] tablet:text-center">
+      <MainTitle className="mb-[37px] tablet:mb-[88px]">
         Our <span>Gallery</span>
       </MainTitle>
       <Swiper
@@ -23,7 +23,7 @@ const Gallery = () => {
         slidePrevClass="prev-slide-test"
         // parallax={true}
         effect="creative"
-        onSwiper={(swiper) => console.dir(swiper)}
+        // onSwiper={(swiper) => console.dir(swiper)}
         modules={[Parallax, EffectCreative]}
         breakpoints={{
           320: {

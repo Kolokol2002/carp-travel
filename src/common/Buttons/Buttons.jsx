@@ -3,7 +3,6 @@ import { StyledButtonHero } from "./Buttons.styled";
 
 const ButtonHero = ({ refEl }) => {
   const handleClick = () => {
-    console.log(refEl);
     refEl.current?.scrollIntoView({ behavior: "smooth" });
   };
 

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 export const BackgroundMain = styled.div`
   background-image: url(/carp-travel/images/${(prop) => prop.src});
@@ -7,7 +7,7 @@ export const BackgroundMain = styled.div`
   background-position-x: 20%;
 `;
 
-export const BackgroundGradiend = styled("div")`
+export const BackgroundGradiend = styled.div`
   background-color: rgba(2, 15, 8, 0.5);
   &::before {
     content: "";
@@ -24,7 +24,7 @@ export const BackgroundGradiend = styled("div")`
   }
 `;
 
-export const UpContent = styled("div")`
+export const UpContent = styled.div`
   position: relative;
   z-index: 100;
 `;
