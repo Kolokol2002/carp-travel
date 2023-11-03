@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MainTitle from "../../common/MainTitle/MainTitle";
 
 import "./WeOffer.css";
@@ -13,8 +13,6 @@ import "swiper/css/navigation";
 
 import data from "../../data/slider.json";
 import {
-  CountSlides,
-  ImageSlideContainer,
   Name,
   NameList,
   SubTitle,
@@ -22,30 +20,34 @@ import {
   WeOfferComponent,
 } from "./WeOffer.styled";
 
-const Test = ({ data, id }) => {
+const Test = ({ data, id, currentSlide, setCurrentSlide }) => {
   const swiper = useSwiper();
+  const onChangeSlide = (idText) => {
+    if (currentSlide === idText) return;
+
+    const translatePred = swiper.translate;
+    swiper.slideToLoop(idText - 1);
+    const translate = swiper.translate;
+    swiper.translateTo(translatePred);
+    const el = swiper.el.getElementsByClassName("active-slide-test-offer")[0];
+    el.classList.remove("active-slide-test-offer");
+
+    setTimeout(() => {
+      swiper.translateTo(translate);
+      el.classList.add("active-slide-test-offer");
+      setCurrentSlide(idText);
+    }, 200);
+  };
   return (
     <NameList id={id}>
-      {data.map(({ name, id, underImageText }) => (
+      {data.map(({ name, id: idText, underImageText }) => (
         <Name
-          onClick={() => {
-            const translatePred = swiper.translate;
-            swiper.slideToLoop(id - 1);
-            const translate = swiper.translate;
-            swiper.translateTo(translatePred);
-            const el = swiper.el.getElementsByClassName(
-              "active-slide-test-offer",
-            )[0];
-            el.classList.remove("active-slide-test-offer");
-
-            setTimeout(() => {
-              swiper.translateTo(translate);
-              el.classList.add("active-slide-test-offer");
-            }, 300);
-          }}
+          key={idText}
+          className="category_button"
+          onClick={() => onChangeSlide(idText)}
         >
           <span>{name}</span>
-          <p>{underImageText}</p>
+          <p className="slider-underImageText">{underImageText}</p>
         </Name>
       ))}
     </NameList>
@@ -53,6 +55,7 @@ const Test = ({ data, id }) => {
 };
 
 const WeOffer = () => {
+  const [currentSlide, setCurrentSlide] = useState(1);
   return (
     <WeOfferComponent>
       <MainTitle
@@ -60,7 +63,7 @@ const WeOffer = () => {
       tablet:absolute 
       desktop:mb-[23px]"
       >
-        WE <span className="">OFFER</span>
+        WE <span>OFFER</span>
       </MainTitle>
       <Swiper
         modules={[A11y, EffectFade, Parallax]}
@@ -98,7 +101,13 @@ const WeOffer = () => {
                 <UnderImageText className="slider-underImageText tablet:order-2">
                   {underImageText}
                 </UnderImageText>
-                <Test className="tablet:" data={data} id={id} />
+                <Test
+                  className="tablet:"
+                  data={data}
+                  id={id}
+                  currentSlide={currentSlide}
+                  setCurrentSlide={setCurrentSlide}
+                />
                 <SubTitle className="slider-subtitle tablet:order-3">
                   {subtitle}
                 </SubTitle>

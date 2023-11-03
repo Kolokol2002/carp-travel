@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 export const WeOfferComponent = styled.section`
   /* & h2 {
@@ -118,13 +118,13 @@ export const NameList = styled.ul`
     align-self: center;
     margin-left: 60px;
   }
-
-  & li:nth-child(${(prop) => prop.id}) {
+  & li:nth-of-type(${(prop) => prop.id}) {
     & span {
       font-weight: 500;
       opacity: 1;
       display: flex;
       align-items: center;
+      transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
       &::before {
         content: "";
         display: inline-block;
@@ -164,6 +164,7 @@ export const Name = styled.li`
     text-transform: uppercase;
     opacity: 50%;
     cursor: pointer;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
 
     @media (min-width: 768px) {
       line-height: 18px;
