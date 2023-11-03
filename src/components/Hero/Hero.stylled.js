@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 export const HeroComponent = styled.section`
   & h2 {
@@ -34,15 +34,15 @@ export const SecondaryText = styled.div`
   margin-bottom: 24px;
   margin-right: -7px;
 
-  & span:nth-child(1) {
+  & span:nth-of-type(1) {
     font-weight: 500;
     letter-spacing: 0em;
   }
-  & span:nth-child(2) {
+  & span:nth-of-type(2) {
     font-weight: 100;
     letter-spacing: 0.045em;
   }
-  & span:nth-child(3) {
+  & span:nth-of-type(3) {
     display: block;
     font-size: 12px;
     font-weight: 300;
@@ -57,10 +57,10 @@ export const SecondaryText = styled.div`
     margin-bottom: 56px;
     margin-right: -17px;
 
-    & span:nth-child(2) {
+    & span:nth-of-type(2) {
       letter-spacing: 0.13em;
     }
-    & span:nth-child(3) {
+    & span:nth-of-type(3) {
       font-size: 14px;
       line-height: 17px;
       letter-spacing: 1.85em;
@@ -72,7 +72,7 @@ export const SecondaryText = styled.div`
     line-height: 119px;
     margin-bottom: 181px;
     margin-right: -38px;
-    & span:nth-child(3) {
+    & span:nth-of-type(3) {
       font-size: 16px;
       line-height: 19px;
       letter-spacing: 2.62em;
