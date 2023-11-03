@@ -11,10 +11,12 @@ import {
   ChooseUsFirst,
   ChooseUsSecond,
 } from "../../components/ChooseUs/ChooseUs";
+import { useMediaQuery } from "react-responsive";
+import ContactUs from "../../components/ContactUs/ContactUs";
 
 const Home = () => {
   const ref = useRef(null);
-  console.log(ref);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <HomePage>
       <BackgroundImage src={"background-header-hero.jpg"}>
@@ -35,19 +37,26 @@ const Home = () => {
           <WeOffer refIn={ref} />
         </Container>
       </BackgroundImage>
-      <BackgroundImage src={"background-header-our-gallery.jpg"}>
-        <Container name={"gallery"}>
-          <Gallery />
-        </Container>
-      </BackgroundImage>
       <BackgroundImage src={"background-choose-us.jpg"}>
         <Container name={"choose_first"}>
           <ChooseUsFirst />
         </Container>
       </BackgroundImage>
-      <BackgroundImage src={"background-choose-us.jpg"}>
-        <Container name={"choose_second"}>
-          <ChooseUsSecond />
+      {isMobile && (
+        <BackgroundImage src={"background-choose-us.jpg"}>
+          <Container name={"choose_second"}>
+            <ChooseUsSecond />
+          </Container>
+        </BackgroundImage>
+      )}
+      <BackgroundImage src={"background-header-our-gallery.jpg"}>
+        <Container name={"gallery"}>
+          <Gallery />
+        </Container>
+      </BackgroundImage>
+      <BackgroundImage src={"background-contact.jpg"}>
+        <Container name={"contacts"}>
+          <ContactUs />
         </Container>
       </BackgroundImage>
     </HomePage>
