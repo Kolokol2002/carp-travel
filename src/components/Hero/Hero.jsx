@@ -4,7 +4,7 @@ import {
   LocationText,
   SecondaryText,
   UsText,
-} from "./Hero.stylled";
+} from "./Hero.styled";
 import ButtonHero from "../../common/Buttons/Buttons";
 import MainTitle from "../../common/MainTitle/MainTitle";
 

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { desktop, min, tablet } from "../../styles/media";
 
 export const HeroComponent = styled.section`
   & h2 {
@@ -82,13 +83,13 @@ export const SecondaryText = styled.div`
 
 export const LocationText = styled.h3`
   font-size: 10px;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 16px;
   letter-spacing: 0em;
   width: 157px;
   margin-bottom: 24px;
 
-  @media (min-width: 768px) {
+  ${min(tablet)} {
     font-size: 14px;
     letter-spacing: 0.09em;
     width: 270px;
@@ -96,11 +97,15 @@ export const LocationText = styled.h3`
     order: 2;
     margin-bottom: 0;
   }
+
+  ${min(desktop)} {
+    width: auto;
+  }
 `;
 
 export const UsText = styled.div`
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 20px;
   letter-spacing: 0em;
 
