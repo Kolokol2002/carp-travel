@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MainTitle from "../../common/MainTitle/MainTitle";
 
 import "./WeOffer.css";
@@ -54,8 +54,12 @@ const Test = ({ data, id, currentSlide, setCurrentSlide }) => {
   );
 };
 
-const WeOffer = () => {
+const WeOffer = ({ setNumberPhoto }) => {
   const [currentSlide, setCurrentSlide] = useState(1);
+  useEffect(() => {
+    setNumberPhoto(currentSlide);
+  }, [currentSlide, setNumberPhoto]);
+
   return (
     <WeOfferComponent>
       <MainTitle
