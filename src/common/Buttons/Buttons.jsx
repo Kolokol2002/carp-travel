@@ -8,7 +8,9 @@ const ButtonHero = ({ refEl }) => {
 
   return (
     <StyledButtonHero>
-      <button onClick={handleClick}>JOIN NOW</button>
+      <button onClick={handleClick}>
+        <div>JOIN NOW</div>
+      </button>
     </StyledButtonHero>
   );
 };
