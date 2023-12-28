@@ -52,7 +52,7 @@ export const AboutUsComponent = styled.section`
 
 export const SubTitle = styled.p`
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 20px;
   letter-spacing: 0em;
   color: rgba(255, 255, 255, 0.7);
@@ -61,7 +61,7 @@ export const SubTitle = styled.p`
   margin-bottom: ${(prop) => (prop.mb !== undefined ? `${prop.mb}px` : 0)};
 
   & span {
-    font-weight: 400;
+    font-weight: 200;
     color: rgba(255, 255, 255, 1);
   }
   @media (min-width: 768px) {
@@ -101,7 +101,7 @@ export const SecondaryText = styled.h3`
 
   & span:nth-of-type(3) {
     color: rgba(255, 255, 255, 0.7);
-    font-weight: 200;
+    font-weight: 100;
     letter-spacing: -0.01em;
     text-transform: lowercase;
   }

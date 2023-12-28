@@ -15,7 +15,7 @@ export const ContainerTitleSub = styled.div`
 `;
 export const Subtitle = styled.p`
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 20px;
   color: #ffffff;
   margin-bottom: 36px;
@@ -66,7 +66,7 @@ export const ItemTitle = styled.h4`
 `;
 export const ItemSubtitle = styled.p`
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 20px;
   ${min(tablet)} {
   }

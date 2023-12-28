@@ -70,7 +70,6 @@ const Gallery = () => {
               // spaceBetween: 24,
             },
           },
-          1280: {},
         }}
       >
         {images.map(({ id, url, alt }) => (

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Header from "../../components/Header/Header";
 import BackgroundImage from "../../common/BackgroundImage/BackgroundImage";
 import AboutUs from "../../components/AboutUs/AboutUs";
@@ -15,8 +15,10 @@ import { useMediaQuery } from "react-responsive";
 import ContactUs from "../../components/ContactUs/ContactUs";
 
 const Home = () => {
+  const [numberPhoto, setNumberPhoto] = useState(1);
   const ref = useRef(null);
   const isMobile = useMediaQuery({ maxWidth: 767 });
+
   return (
     <HomePage>
       <BackgroundImage src={"background-header-hero.jpg"}>
@@ -32,9 +34,9 @@ const Home = () => {
         </Container>
       </BackgroundImage>
 
-      <BackgroundImage src={"background-we-offer.jpg"}>
+      <BackgroundImage src={`background-we-offer-${numberPhoto}.jpg`}>
         <Container name={"services"}>
-          <WeOffer refIn={ref} />
+          <WeOffer setNumberPhoto={setNumberPhoto} refIn={ref} />
         </Container>
       </BackgroundImage>
       <BackgroundImage src={"background-choose-us.jpg"}>
