@@ -95,7 +95,7 @@ const Form = ({ contact }) => {
           team!
         </SubTitle>
       )}
-      <FormStyled onSubmit={handleSubmit}>
+      <FormStyled contact={contact} onSubmit={handleSubmit}>
         <LabelStyled>
           <LabelText>Full name</LabelText>
           <InputStyled
@@ -173,6 +173,7 @@ const Form = ({ contact }) => {
             onChange={handleChange}
             errors={errors.message}
             touched={touched.message}
+            contact={contact}
           />
           {touched.message && errors.message && (
             <ErrorMessageText>{errors.message}</ErrorMessageText>

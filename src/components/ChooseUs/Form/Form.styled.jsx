@@ -1,11 +1,10 @@
 import styled from "@emotion/styled";
-import { min, tablet } from "../../../styles/media";
+import { desktop, min, tablet } from "../../../styles/media";
 
 export const SubTitle = styled.p`
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 20px;
-
   width: 180px;
   margin-left: auto;
 `;
@@ -13,10 +12,18 @@ export const SubTitle = styled.p`
 export const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: ${({ contact }) => (contact ? "24px" : "16px")};
+
   ${min(tablet)} {
     flex-wrap: wrap;
     height: 336px;
+    gap: ${({ contact }) => (contact ? "28px" : "16px")};
+  }
+
+  ${min(desktop)} {
+    height: ${({ contact }) => (contact ? "auto" : "336px")};
+    flex-direction: ${({ contact }) => (contact ? "row" : "column")};
+    width: ${({ contact }) => (contact ? "500px" : "auto")};
   }
 `;
 
@@ -28,7 +35,7 @@ export const LabelStyled = styled.label`
 
 export const LabelText = styled.span`
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 24px;
   letter-spacing: 0.2em;
   margin-bottom: 4px;
@@ -36,10 +43,9 @@ export const LabelText = styled.span`
 
 export const InputStyled = styled.input`
   background-color: #ffffff0d;
-
   height: ${({ message }) => (message ? "200px" : "auto")};
-
   padding: 8px;
+
   &::placeholder {
     font-size: 13px;
     font-weight: 200;
@@ -55,10 +61,17 @@ export const InputStyled = styled.input`
 
 export const TextAreaStyled = styled.textarea`
   background-color: #ffffff0d;
-
   height: 200px;
-
   padding: 8px;
+
+  ${min(tablet)} {
+    width: ${({ contact }) => (contact ? "463px" : "auto")};
+  }
+
+  ${min(desktop)} {
+    width: ${({ contact }) => (contact ? "500px" : "auto")};
+  }
+
   &:hover,
   &:focus {
     background: #ffffff1a;
@@ -94,6 +107,7 @@ export const InputCheckboxStyled = styled.input`
   width: 24px;
   height: 24px;
 `;
+
 export const CustomCheckBox = styled.div`
   width: 24px;
   height: 24px;
@@ -114,6 +128,7 @@ export const CustomCheckBox = styled.div`
     transition: opacity cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
   }
 `;
+
 export const ButtonForm = styled.button`
   font-size: 30px;
   font-weight: 500;
